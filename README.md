@@ -16,3 +16,6 @@ dotnet run
 Browse to https://localhost:5001 to see the working app. 
 
 At the first run, it takes a little while before all dependencies are resolved. Just have a little patience. After the first run, things are much faster.
+
+## Dotnet 3.1 usage
+A temporary solution has been setup on branch dotnet_3dot1 to allow usage with dotnet3.1
