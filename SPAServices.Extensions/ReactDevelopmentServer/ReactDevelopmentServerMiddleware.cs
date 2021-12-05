@@ -63,6 +63,7 @@ namespace Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer
         private static async Task<int> StartCreateReactAppServerAsync(
             string sourcePath, string npmScriptName, ILogger logger)
         {
+            // port number has been hardcoded in as create-react-app server needs to be on port 300 for proxying via aspnetcore app
             var portNumber = 3000; // TcpPortFinder.FindAvailablePort();
             logger.LogInformation($"Starting create-react-app server on port {portNumber}...");
 
