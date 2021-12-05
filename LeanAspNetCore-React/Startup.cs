@@ -55,9 +55,10 @@ namespace LeanAspNetCore
                 app.UseSpa(spa =>
                 {
                     spa.Options.SourcePath = "ClientApp";
-                    spa.Options.DevServerPort = 3000;
+                    //spa.Options.DevServerPort = 3000;
 
                     spa.UseReactDevelopmentServer(npmScript: "start");
+                    //spa.UseProxyToSpaDevelopmentServer("http://localhost:3000/");
                 });
             }
         }
