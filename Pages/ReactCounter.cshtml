@@ -1,0 +1,30 @@
+﻿@page
+@{
+    //Layout = "Shared/_Layout.cshtml";
+    ViewData["Title"] = "React Counter";
+}
+@model LeanAspNetCore.Pages.ReactCounterModel
+<div id="react-counter-app"></div>
+<br />
+<a id='specialtext' href='#'>Click classic </a>
+
+@section scripts
+{
+    <environment names="Development">
+        <script type="module" src="~/dist/js/classic-other.js"></script>
+        <script type="module">
+            import RefreshRuntime from '@Url.Content("~/dist/@react-refresh")'
+            RefreshRuntime.injectIntoGlobalHook(window)
+            window.$RefreshReg$ = () => { }
+            window.$RefreshSig$ = () => (type) => type
+            window.__vite_plugin_react_preamble_installed__ = true
+        </script>
+        <script type="module" src="~/dist/js/react-counter.jsx"></script>
+        
+    </environment>
+    <environment names="Staging,Production">
+        <script type="module" asp-src-include="~/dist/assets/react-counter.*.js"></script>
+        <script type="module" asp-src-include="~/dist/assets/classic-other.*.js"></script>
+
+    </environment>
+}

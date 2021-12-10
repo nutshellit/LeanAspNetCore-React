@@ -1,4 +1,6 @@
 import $ from 'jquery';
+window.$ = $;
+//console.log($);
 
 import 'popper.js';
 import 'bootstrap';
